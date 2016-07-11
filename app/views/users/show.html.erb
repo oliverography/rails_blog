@@ -1,0 +1,10 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+Name: <%= @user.name %>
+Email: <%= @user.email %>
+Birthday: <%= @user.birthday %>
+Password: <%= @user.password %>
+
+<%= link_to("Edit User", edit_user_path) %>
+<%= link_to("Delete User", user_path, method: :delete) %>

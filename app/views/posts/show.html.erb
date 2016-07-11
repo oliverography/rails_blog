@@ -1,0 +1,29 @@
+<section id="main">
+  <%= render "post", post: @post %>
+</section>
+
+<section id="comments">
+  <!-- COMMENTS -->
+  <% @post.comments.each do |comment| %>
+    <div class="wrapper comments">
+      <p>
+        <%= comment.content %>
+      </p>
+      <h3>
+        <%= comment.post.user.name.upcase %> | 
+        POSTED <%= distance_of_time_in_words(Time.now, comment.created_at).upcase %> AGO 
+        <% if current_user && current_user.id == comment.post.user.id %>
+          | <%= link_to("DELETE", post_comment_path(comment.post.id, comment.id), method: :delete, data: {confirm: 'Are you sure?'}) %>
+        <% end %>
+      </h3>
+    </div>
+  <% end %>
+  <!-- COMMENT FORM -->
+  <div class="wrapper comments">
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <%= f.text_area :content, :placeholder => "Add a comment", size: "60x2" %>
+      <%= f.hidden_field :post_id, :value => @post.id %>
+      <%= f.submit :value => "COMMENT", :class => "button" %>
+    <% end %>
+  </div>
+</section>

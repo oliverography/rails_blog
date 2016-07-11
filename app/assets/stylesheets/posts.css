@@ -1,0 +1,7 @@
+.edit_options {
+  display: none;
+}
+
+.post:hover .edit_options {
+  display: inline;
+}

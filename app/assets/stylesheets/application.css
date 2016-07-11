@@ -13,3 +13,124 @@
  *= require_tree .
  *= require_self
  */
+
+header {
+  background-color: grey;
+  background-image: url('train-bg.jpeg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100vw;
+}
+
+.title {
+  color: white;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 150px;
+}
+
+.title.left {
+  left: 30%;
+}
+
+.title.right {
+  right: 30%;
+}
+
+nav {
+  border: solid 1px black;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+nav ul li {
+  border-right: solid 1px black;
+  display: inline;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 50px;
+  padding: 0 40px;
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 2em;
+}
+
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 2em;
+}
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  /*letter-spacing: 1px;*/
+  line-height: 2em;
+}
+
+p {
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2em;
+}
+
+.wrapper {
+  margin: 0 auto 40px auto;
+  width: 700px;
+}
+
+input, textarea {
+  border: 1px solid black;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2em;
+  padding: 10px;
+}
+
+.button {
+  background-color: white;
+  border: solid 1px black;
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  outline: none;
+  padding: 2px 15px;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
