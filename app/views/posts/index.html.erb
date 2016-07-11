@@ -1,5 +1,7 @@
 <section id="main">
   <% @posts.each do |post| %>
-    <%= render "post", post: post %>
+    <div class="wrapper">
+      <%= render "posts", post: post %>
+    </div>
   <% end %>
 </section>

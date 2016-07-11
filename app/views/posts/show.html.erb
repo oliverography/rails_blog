@@ -1,5 +1,7 @@
 <section id="main">
-  <%= render "post", post: @post %>
+  <div class="wrapper">
+    <%= render "posts", post: @post %>
+  </div>
 </section>
 
 <section id="comments">
@@ -19,9 +21,9 @@
     </div>
   <% end %>
   <!-- COMMENT FORM -->
-  <div class="wrapper comments">
+  <div class="wrapper">
     <%= form_for([@post, @post.comments.build]) do |f| %>
-      <%= f.text_area :content, :placeholder => "Add a comment", size: "60x2" %>
+      <%= f.text_area :content, :placeholder => "ADD A COMMENT", :class => "field comment" %>
       <%= f.hidden_field :post_id, :value => @post.id %>
       <%= f.submit :value => "COMMENT", :class => "button" %>
     <% end %>

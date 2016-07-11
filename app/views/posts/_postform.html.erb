@@ -1,0 +1,6 @@
+<%= form_for @post do |f| %>
+  <%= f.text_field :title, :placeholder => "TITLE", :class => "field" %>
+  <%= f.text_area :content, :placeholder => "WRITE A POST", :class => "field post" %>
+  <%= f.hidden_field :user_id, :value => current_user.id, :class => "field" %>
+  <%= f.submit :value => "POST", :class => "button" %>
+<% end %>
