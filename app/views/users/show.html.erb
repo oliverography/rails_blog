@@ -5,7 +5,7 @@
     <% if @user.posts.length == 0 %>
       <p>No posts yet.</p>
     <% end %>
-    <% @user.posts.each do |post| %>
+    <% @user.posts.order('created_at DESC').each do |post| %>
       <div class="wrapper">
         <%= render "posts", post: post %>
       </div>
