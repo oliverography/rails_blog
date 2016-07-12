@@ -9,9 +9,7 @@
     | <%= link_to("DELETE", post_path(post.id), method: :delete, data: {confirm: 'Are you sure?'}) %>
   <% end %>
 </h3>
-<p>
-  <%= post.content %>
-</p>
+<pre><%= post.content %></pre>
 <h3>
   <%= link_to(post.comments.count.to_s + " Comment".pluralize(post.comments.count).upcase, post_path(post.id) + "#comments") %>
 </h3>
