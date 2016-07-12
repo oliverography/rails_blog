@@ -1,0 +1,7 @@
+<%= form_for @user do |f| %>
+    <%= f.text_field :name, placeholder: "FULL NAME", class: "field", required: true %>
+    <%= f.email_field :email, placeholder: "EMAIL", class: "field", required: true  %>
+    <%= f.text_field :birthday, placeholder: "BIRTHDAY", class: "field", onfocus: "(this.type='date')", required: true %> 
+    <%= f.password_field :password, placeholder: "PASSWORD", class: "field", required: true %>
+    <%= f.submit value: "SUBMIT", class: "button" %>
+<% end %>

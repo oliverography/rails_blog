@@ -1,4 +1,7 @@
 <section id="main">
+  <% if @posts.length == 0 %>
+    <p>No posts yet.</p>
+  <% end %>
   <% @posts.each do |post| %>
     <div class="wrapper">
       <%= render "posts", post: post %>

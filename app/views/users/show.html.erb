@@ -1,6 +1,10 @@
 <section id="main">
   <div class="wrapper">
     <h2><%= @user.name.upcase %></h2>
+    <!-- NO POSTS YET MSG -->
+    <% if @user.posts.length == 0 %>
+      <p>No posts yet.</p>
+    <% end %>
     <% @user.posts.each do |post| %>
       <div class="wrapper">
         <%= render "posts", post: post %>

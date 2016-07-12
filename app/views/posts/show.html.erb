@@ -12,7 +12,7 @@
         <%= comment.content %>
       </p>
       <h3>
-        <%= comment.post.user.name.upcase %> | 
+        <%= link_to(comment.post.user.name.upcase, user_path(comment.post.user.id)) %> | 
         POSTED <%= distance_of_time_in_words(Time.now, comment.created_at).upcase %> AGO 
         <% if current_user && current_user.id == comment.post.user.id %>
           | <%= link_to("DELETE", post_comment_path(comment.post.id, comment.id), method: :delete, data: {confirm: 'Are you sure?'}) %>
@@ -23,9 +23,9 @@
   <!-- COMMENT FORM -->
   <div class="wrapper">
     <%= form_for([@post, @post.comments.build]) do |f| %>
-      <%= f.text_area :content, :placeholder => "ADD A COMMENT", :class => "field comment" %>
-      <%= f.hidden_field :post_id, :value => @post.id %>
-      <%= f.submit :value => "COMMENT", :class => "button" %>
+      <%= f.text_area :content, placeholder: "ADD A COMMENT", class: "field comment", required: true %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.submit value: "COMMENT", class: "button" %>
     <% end %>
   </div>
 </section>

@@ -1,14 +1,6 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :birthday %>
-  <%= f.date_field :birthday %> 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit %>
-<% end %>
+<section id="main">
+  <div class="wrapper">
+    <h2>EDIT USER</h2>
+    <%= render "userform" %>
+  </div>
+</section>

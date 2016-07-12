@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     session[:user_id] = @user.id
 
-    redirect_to root_path
+    redirect_to home_path
   end
 
   def show
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
 
-    redirect_to :users
+    redirect_to home_path
   end
 
   private
