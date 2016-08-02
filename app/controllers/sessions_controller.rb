@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
 
-      redirect_to "/"
+      redirect_to root_path
     else
       flash[:notice] = "Invalid Username or Password"
       
@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
   def logout
     session[:user_id] = nil
 
-    redirect_to "/"
+    redirect_to root_path
   end
 end
